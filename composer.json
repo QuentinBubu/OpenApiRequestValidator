@@ -1,0 +1,20 @@
+{
+    "name": "quentin-bubu-dev/open-api-request-validator",
+    "description": "Library for check validity of request from OpenAPI doc, this is a first version of project (unstable)",
+    "type": "library",
+    "require": {
+        "psr/http-message": "^2.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "QuentinBubuDev\\OpenApiRequestValidator\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "QuentinBubu",
+            "email": "quentinbubu.dev@gmail.com"
+        }
+    ]
+}
