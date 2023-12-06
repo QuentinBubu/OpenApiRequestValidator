@@ -13,15 +13,14 @@ class ValidRequest
      * @param string $method
      * @return ValidRequestErrorEnum|bool
      */
-    public static function check(array $data, ServerRequestInterface $request): ValidRequestErrorEnum|bool
+    public static function check(array $data, ServerRequestInterface $request, string $yamlData): ValidRequestErrorEnum|bool
     {
         $method = strtolower($request->getMethod());
         $url = $request->getUri()->getPath();
         $url = strlen($url) > 1 ? rtrim($url, '/') : $url;
         $url = str_replace($data["prefix"] . "/" . $data["version"], "", $url);
 
-        $spec = Yaml::parseFile(__DIR__ . "/../../storage/api-docs/api-design.yml");
-
+        $spec = Yaml::parse($yamlData);
 
         // Check base url
 
